@@ -31,8 +31,8 @@ const OnBoarding: React.FC = () => {
     <Container>
       <Slider style={{ backgroundColor }}>
         <HorizontalScrollView {...scrollHandler} ref={scroll}>
-          {slides.map(({ title }, index) => (
-            <Slide key={index} right={!!(index % 2)} {...{ title }} />
+          {slides.map(({ title, picture }, index) => (
+            <Slide key={index} right={!!(index % 2)} {...{ title, picture }} />
           ))}
         </HorizontalScrollView>
       </Slider>

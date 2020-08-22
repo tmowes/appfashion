@@ -5,11 +5,13 @@ import { WrapperProps } from './types'
 const { width, height } = Dimensions.get('window')
 
 export const SLIDE_HEIGHT = 0.61 * height
+
 export const SLIDE_WIDTH = width
 export const SLIDE_TRANSLY = (SLIDE_HEIGHT - 100) / 2
 export const SLIDE_TRANSLX = width / 2
 export const SLIDE_TRANSLR = width / 2 - 50
 export const SLIDE_TRANSLL = -width / 2 + 50
+export const BORDER_RADIUS = 75
 
 export const Container = styled.View.attrs({
   width,
@@ -37,4 +39,25 @@ export const Title = styled.Text`
   font-family: 'SF-Pro-Text-Bold';
   text-align: center;
   color: white;
+`
+
+export const Underlay = styled.View`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom-right-radius: ${BORDER_RADIUS}px;
+  overflow: hidden;
+`
+export const ImageContainer = styled.Image`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: undefined;
+  height: undefined;
+  border-bottom-right-radius: ${BORDER_RADIUS}px;
+  /* background: red; */
 `

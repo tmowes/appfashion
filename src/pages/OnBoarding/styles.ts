@@ -2,11 +2,10 @@
 import styled from 'styled-components/native'
 import Animated from 'react-native-reanimated'
 import { Dimensions } from 'react-native'
-import { SLIDE_HEIGHT } from './Slide/styles'
+import { SLIDE_HEIGHT, BORDER_RADIUS } from './Slide/styles'
 
 const { width } = Dimensions.get('window')
 
-const BORDER_RADIUS = 75
 
 export const Container = styled.View`
   flex: 1;
