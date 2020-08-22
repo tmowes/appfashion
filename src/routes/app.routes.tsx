@@ -2,7 +2,7 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import { StatusBar } from 'react-native'
-import Dashboard from '../pages/Dashboard'
+import OnBoarding from '../pages/OnBoarding'
 
 const App = createStackNavigator()
 
@@ -19,7 +19,7 @@ const AppRoutes: React.FC = () => (
         cardStyle: { backgroundColor: '#282A36' },
       }}
     >
-      <App.Screen name="Dashboard" component={Dashboard} />
+      <App.Screen name="OnBoarding" component={OnBoarding} />
     </App.Navigator>
   </>
 )
