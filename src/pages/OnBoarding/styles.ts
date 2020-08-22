@@ -6,14 +6,15 @@ import { SLIDE_HEIGHT } from './Slide/styles'
 
 const { width } = Dimensions.get('window')
 
+const BORDER_RADIUS = 75
+
 export const Container = styled.View`
-  margin-top: 28px;
   flex: 1;
   background: white;
 `
 export const Slider = styled(Animated.View)`
   height: ${SLIDE_HEIGHT};
-  border-bottom-right-radius: 75px;
+  border-bottom-right-radius: ${BORDER_RADIUS}px;
 `
 export const HorizontalScrollView = styled(Animated.ScrollView).attrs({
   horizontal: true,
@@ -22,6 +23,7 @@ export const HorizontalScrollView = styled(Animated.ScrollView).attrs({
   showsHorizontalScrollIndicator: false,
   bounces: false,
 })``
+
 export const Footer = styled.View`
   flex: 1;
 `
@@ -33,9 +35,25 @@ export const BorderTopLeft = styled(Animated.View)`
   right: 0;
   bottom: 0;
 `
+export const FooterWrapper = styled.View`
+  flex: 1;
+  background: white;
+  border-top-left-radius: ${BORDER_RADIUS}px;
+`
+
 export const FooterContent = styled(Animated.View)`
   flex: 1;
   flex-direction: row;
-  background: white;
-  border-top-left-radius: 75px;
+  border-top-left-radius: ${BORDER_RADIUS}px;
+`
+export const PaginationContainer = styled.View`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: ${BORDER_RADIUS}px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 `

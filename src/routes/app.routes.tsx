@@ -16,7 +16,7 @@ const AppRoutes: React.FC = () => (
     <App.Navigator
       screenOptions={{
         headerShown: false,
-        cardStyle: { backgroundColor: '#282A36' },
+        cardStyle: { backgroundColor: 'transparent' },
       }}
     >
       <App.Screen name="OnBoarding" component={OnBoarding} />

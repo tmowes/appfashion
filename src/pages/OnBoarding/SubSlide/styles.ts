@@ -1,10 +1,15 @@
 import styled from 'styled-components/native'
+import { Dimensions } from 'react-native'
+
+const { width } = Dimensions.get('window')
+const SUBSLIDE_WIDTH = width
 
 export const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
   padding: 48px;
+  width: ${SUBSLIDE_WIDTH}px;
 `
 export const SubTitle = styled.Text`
   font-size: 24px;
