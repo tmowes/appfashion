@@ -18,7 +18,6 @@ export const Container = styled.View.attrs({
   width: ${SLIDE_WIDTH}px;
 `
 export const Wrapper = styled.View<WrapperProps>`
-  /* background: green; */
   justify-content: center;
   height: 100px;
   z-index: 10;

@@ -24,6 +24,8 @@
   "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
   "rules": {
     "react/prop-types": "off",
+    "react/no-array-index-key": "off",
+    "react/style-prop-object": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "no-console": "off",
     "prettier/prettier": "error",

@@ -1,5 +1,5 @@
 export interface SlideProps {
-  label: string
+  title: string
   right?: boolean
 }
 export interface WrapperProps {
