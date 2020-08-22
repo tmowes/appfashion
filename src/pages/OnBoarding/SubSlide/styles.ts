@@ -25,6 +25,6 @@ export const Description = styled.Text`
   font-family: 'SF-Pro-Text-Regular';
   text-align: center;
   color: #0c0d34;
-  opacity: 0.6;
+  opacity: 0.7;
   margin-bottom: 40px;
 `
