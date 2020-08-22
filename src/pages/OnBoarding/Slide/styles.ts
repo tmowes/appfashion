@@ -18,7 +18,29 @@ export const Container = styled.View.attrs({
 })`
   flex: 1;
   width: ${SLIDE_WIDTH}px;
+  overflow: hidden;
+  border-bottom-right-radius: ${BORDER_RADIUS}px;
 `
+export const Underlay = styled.View`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom-right-radius: ${BORDER_RADIUS}px;
+  justify-content: flex-end;
+`
+export const ImageContainer = styled.Image`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: undefined;
+  height: undefined;
+  border-bottom-right-radius: ${BORDER_RADIUS}px;
+`
+
 export const Wrapper = styled.View<WrapperProps>`
   justify-content: center;
   height: 100px;
@@ -39,25 +61,4 @@ export const Title = styled.Text`
   font-family: 'SF-Pro-Text-Bold';
   text-align: center;
   color: white;
-`
-
-export const Underlay = styled.View`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-bottom-right-radius: ${BORDER_RADIUS}px;
-  overflow: hidden;
-`
-export const ImageContainer = styled.Image`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: undefined;
-  height: undefined;
-  border-bottom-right-radius: ${BORDER_RADIUS}px;
-  /* background: red; */
 `

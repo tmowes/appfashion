@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import { StatusBar } from 'react-native'
 import OnBoarding from '../pages/OnBoarding'
+import Welcome from '../pages/Welcome'
 
 const App = createStackNavigator()
 
@@ -20,6 +21,7 @@ const AppRoutes: React.FC = () => (
       }}
     >
       <App.Screen name="OnBoarding" component={OnBoarding} />
+      <App.Screen name="Welcome" component={Welcome} />
     </App.Navigator>
   </>
 )

@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useRef } from 'react'
 import { Dimensions } from 'react-native'
 import { interpolateColor, useScrollHandler } from 'react-native-redash'
@@ -23,7 +23,7 @@ const { width } = Dimensions.get('window')
 const OnBoarding: React.FC = () => {
   const scroll = useRef<Animated.ScrollView>(null)
   const { scrollHandler, x } = useScrollHandler()
-  const backgroundColor: AnimatedNode<string> = interpolateColor(x, {
+  const backgroundColor: any = interpolateColor(x, {
     inputRange: slides.map((_, index) => index * width),
     outputRange: slides.map(slide => slide.color),
   })

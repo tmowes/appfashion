@@ -6,7 +6,6 @@ import { SLIDE_HEIGHT, BORDER_RADIUS } from './Slide/styles'
 
 const { width } = Dimensions.get('window')
 
-
 export const Container = styled.View`
   flex: 1;
   background: white;
