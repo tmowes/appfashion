@@ -11,6 +11,10 @@ const variants = {
     background: transparent;
     color: #0c0d34;
   `,
+  transparent2: css`
+    background: transparent;
+    color: #2cb9b0;
+  `,
   default: css`
     background: #0c0d3411;
     color: #0c0d34;

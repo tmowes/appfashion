@@ -1,12 +1,16 @@
 import React from 'react'
-import { Text } from 'react-native'
 
+import { Text } from 'react-native'
 import { Container } from './styles'
+import PagesContainer from '../../components/PagesContainer'
+import SocialLogin from '../../components/SocialLogin'
 
 const Login: React.FC = () => {
   return (
     <Container>
-      <Text>Login</Text>
+      <PagesContainer footer={<SocialLogin />}>
+        <Text>Children</Text>
+      </PagesContainer>
     </Container>
   )
 }

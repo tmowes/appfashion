@@ -1,13 +1,12 @@
 import styled from 'styled-components/native'
 import Animated from 'react-native-reanimated'
-import { BORDER_RADIUS, SLIDE_HEIGHT } from '../OnBoarding/Slide/styles'
+import { BORDER_RADIUS } from '../OnBoarding/Slide/styles'
 
 export const Container = styled.View`
   flex: 1;
   background: white;
 `
 export const Slider = styled(Animated.View)`
-  /* height: ${SLIDE_HEIGHT}; */
   flex: 1;
   background: #e8e6e3;
   border-bottom-right-radius: ${BORDER_RADIUS}px;

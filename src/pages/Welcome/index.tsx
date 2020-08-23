@@ -2,6 +2,7 @@
 import React from 'react'
 import { Dimensions } from 'react-native'
 
+import { useNavigation } from '@react-navigation/native'
 import {
   Container,
   FooterWrapper,
@@ -18,6 +19,7 @@ import Button from '../../components/Button'
 const { width } = Dimensions.get('window')
 
 const Welcome: React.FC = () => {
+  const { navigate } = useNavigation()
   return (
     <Container>
       <Slider>
@@ -40,7 +42,7 @@ const Welcome: React.FC = () => {
           <Button
             variant="primary"
             label="Have an account? Login"
-            onPress={() => {}}
+            onPress={() => navigate('Login')}
           />
           <Button label="Join us, its free" onPress={() => {}} />
           <Button

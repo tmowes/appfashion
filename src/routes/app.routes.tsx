@@ -22,8 +22,8 @@ const AppRoutes: React.FC = () => (
       }}
     >
       <App.Screen name="Login" component={Login} />
-      <App.Screen name="OnBoarding" component={OnBoarding} />
       <App.Screen name="Welcome" component={Welcome} />
+      <App.Screen name="OnBoarding" component={OnBoarding} />
     </App.Navigator>
   </>
 )
