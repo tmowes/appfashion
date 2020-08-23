@@ -7,6 +7,10 @@ const variants = {
     background: #2cb9b0;
     color: white;
   `,
+  transparent: css`
+    background: transparent;
+    color: #0c0d34;
+  `,
   default: css`
     background: #0c0d3411;
     color: #0c0d34;

@@ -55,3 +55,15 @@ export const PaginationContainer = styled.View`
   align-items: center;
   justify-content: center;
 `
+export const Underlay = styled(Animated.View)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom-right-radius: ${BORDER_RADIUS}px;
+  /* background: red; */
+`
+export const ImageContainer = styled.Image``

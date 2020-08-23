@@ -1,12 +1,55 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react'
-import { Text } from 'react-native'
+import { Dimensions } from 'react-native'
 
-import { Container } from './styles'
+import {
+  Container,
+  FooterWrapper,
+  Slider,
+  ImageContainer,
+  FooterContent,
+  BorderTopLeft,
+  SubTitle,
+  Description,
+} from './styles'
+import picture from '../../data/picture'
+import Button from '../../components/Button'
+
+const { width } = Dimensions.get('window')
 
 const Welcome: React.FC = () => {
   return (
     <Container>
-      <Text>Welcome</Text>
+      <Slider>
+        <ImageContainer
+          source={picture.uri}
+          style={{
+            width: width - 65,
+            height: ((width - 65) * picture.height) / picture.width,
+            resizeMode: 'cover',
+          }}
+        />
+      </Slider>
+      <FooterWrapper>
+        <BorderTopLeft />
+        <FooterContent>
+          <SubTitle>Lets get started</SubTitle>
+          <Description>
+            Login to your account below or signup for amazing experience
+          </Description>
+          <Button
+            variant="primary"
+            label="Have an account? Login"
+            onPress={() => {}}
+          />
+          <Button label="Join us, its free" onPress={() => {}} />
+          <Button
+            variant="transparent"
+            label="Forgot password"
+            onPress={() => {}}
+          />
+        </FooterContent>
+      </FooterWrapper>
     </Container>
   )
 }

@@ -1,8 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useRef } from 'react'
 import { Dimensions } from 'react-native'
 import { interpolateColor, useScrollHandler } from 'react-native-redash'
-import Animated, { multiply, divide } from 'react-native-reanimated'
+import Animated, {
+  multiply,
+  divide,
+  interpolate,
+  Extrapolate,
+} from 'react-native-reanimated'
+import { useNavigation } from '@react-navigation/native'
 import {
   Container,
   Slider,
@@ -12,6 +17,8 @@ import {
   BorderTopLeft,
   PaginationContainer,
   FooterContent,
+  Underlay,
+  ImageContainer,
 } from './styles'
 import Slide from './Slide'
 
@@ -20,7 +27,10 @@ import SubSlide from './SubSlide'
 import PaginationDot from './PaginationDot'
 
 const { width } = Dimensions.get('window')
+
 const OnBoarding: React.FC = () => {
+  const { navigate } = useNavigation()
+
   const scroll = useRef<Animated.ScrollView>(null)
   const { scrollHandler, x } = useScrollHandler()
   const backgroundColor: any = interpolateColor(x, {
@@ -30,6 +40,29 @@ const OnBoarding: React.FC = () => {
   return (
     <Container>
       <Slider style={{ backgroundColor }}>
+        {slides.map(({ picture }, index) => {
+          const opacity = interpolate(x, {
+            inputRange: [
+              (index - 0.6) * width,
+              index * width,
+              (index + 0.6) * width,
+            ],
+            outputRange: [0, 1, 0],
+            extrapolate: Extrapolate.CLAMP,
+          })
+          return (
+            <Underlay key={index} style={{ opacity }}>
+              <ImageContainer
+                source={picture.uri}
+                style={{
+                  width: width - 65,
+                  height: ((width - 65) * picture.height) / picture.width,
+                  resizeMode: 'cover',
+                }}
+              />
+            </Underlay>
+          )
+        })}
         <HorizontalScrollView {...scrollHandler} ref={scroll}>
           {slides.map(({ title, picture }, index) => (
             <Slide key={index} right={!!(index % 2)} {...{ title, picture }} />
@@ -55,21 +88,25 @@ const OnBoarding: React.FC = () => {
               transform: [{ translateX: multiply(x, -1) }],
             }}
           >
-            {slides.map(({ subtitle, description }, index) => (
-              <SubSlide
-                key={index}
-                last={index === slides.length - 1}
-                {...{ subtitle, description, x }}
-                onPress={() => {
-                  if (scroll.current) {
-                    scroll.current.getNode().scrollTo({
-                      x: width * (index + 1),
-                      animated: true,
-                    })
-                  }
-                }}
-              />
-            ))}
+            {slides.map(({ subtitle, description }, index) => {
+              const last = index === slides.length - 1
+              return (
+                <SubSlide
+                  key={index}
+                  {...{ subtitle, description, last }}
+                  onPress={() => {
+                    if (last) {
+                      navigate('Welcome')
+                    } else {
+                      scroll.current?.getNode().scrollTo({
+                        x: width * (index + 1),
+                        animated: true,
+                      })
+                    }
+                  }}
+                />
+              )
+            })}
           </FooterContent>
         </FooterWrapper>
       </Footer>

@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 export default [
   {
     title: 'Relaxed',
@@ -6,7 +5,11 @@ export default [
     description:
       "Confused about your outfit? Don't worry! Find the best outfit here!",
     color: '#BFEAF5',
-    picture: require('../assets/OnBoarding/1.png'),
+    picture: {
+      uri: require('../assets/OnBoarding/1.png'),
+      width: 616,
+      height: 945,
+    },
   },
   {
     title: 'Playful',
@@ -14,7 +17,11 @@ export default [
     description:
       'Hating the clothes in your wardrobe? Explore hundreds of outfits ideas',
     color: '#BEECC4',
-    picture: require('../assets/OnBoarding/2.png'),
+    picture: {
+      uri: require('../assets/OnBoarding/2.png'),
+      width: 480,
+      height: 685,
+    },
   },
   {
     title: 'Excentric',
@@ -22,7 +29,11 @@ export default [
     description:
       'Create your individual & unique style and look amazing everyday',
     color: '#FFE4D9',
-    picture: require('../assets/OnBoarding/3.png'),
+    picture: {
+      uri: require('../assets/OnBoarding/3.png'),
+      width: 432,
+      height: 600,
+    },
   },
   {
     title: 'Funky',
@@ -30,6 +41,10 @@ export default [
     description:
       'Discover the latest trends in fashion and explore your personality',
     color: '#FFDDDD',
-    picture: require('../assets/OnBoarding/4.png'),
+    picture: {
+      uri: require('../assets/OnBoarding/4.png'),
+      width: 415,
+      height: 570,
+    },
   },
 ]
