@@ -21,9 +21,9 @@ const AppRoutes: React.FC = () => (
         cardStyle: { backgroundColor: 'transparent' },
       }}
     >
-      <App.Screen name="Login" component={Login} />
-      <App.Screen name="Welcome" component={Welcome} />
       <App.Screen name="OnBoarding" component={OnBoarding} />
+      <App.Screen name="Welcome" component={Welcome} />
+      <App.Screen name="Login" component={Login} />
     </App.Navigator>
   </>
 )

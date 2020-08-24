@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { Text } from 'react-native'
-import { Container } from './styles'
+import { Container, Title, Description } from './styles'
 import PagesContainer from '../../components/PagesContainer'
 import SocialLogin from '../../components/SocialLogin'
 
@@ -9,7 +8,10 @@ const Login: React.FC = () => {
   return (
     <Container>
       <PagesContainer footer={<SocialLogin />}>
-        <Text>Children</Text>
+        <Title>Welcome back</Title>
+        <Description>
+          Use your credentials below to login to your account
+        </Description>
       </PagesContainer>
     </Container>
   )
