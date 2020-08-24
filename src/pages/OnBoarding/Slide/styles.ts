@@ -4,7 +4,7 @@ import { WrapperProps } from './types'
 
 const { width, height } = Dimensions.get('window')
 
-export const SLIDE_HEIGHT = 0.61 * height
+export const SLIDE_HEIGHT = Math.floor(0.61 * height)
 
 export const SLIDE_WIDTH = width
 export const SLIDE_TRANSLY = (SLIDE_HEIGHT - 100) / 2

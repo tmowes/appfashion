@@ -64,6 +64,5 @@ export const Underlay = styled(Animated.View)`
   align-items: center;
   justify-content: flex-end;
   border-bottom-right-radius: ${BORDER_RADIUS}px;
-  /* background: red; */
 `
 export const ImageContainer = styled.Image``
