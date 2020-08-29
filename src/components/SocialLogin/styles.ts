@@ -12,11 +12,11 @@ export const SocialWrapper = styled.View`
   justify-content: center;
 `
 export const IconCircle = styled(RectButton)`
-  height: 48px;
-  width: 48px;
-  border-radius: 24px;
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
   background: white;
-  margin: 8px;
+  margin: 8px 8px 0;
   align-items: center;
   justify-content: center;
 `
@@ -49,19 +49,10 @@ export const AlternativeWrapper = styled.View`
   justify-content: center;
 `
 export const AlternativeText = styled.Text`
-  font-size: 12px;
+  font-size: 14px;
   line-height: 16px;
   font-family: 'SF-Pro-Text-Regular';
   text-align: center;
   color: white;
-`
-export const ButtonText = styled.Text`
-  font-size: 12px;
-  line-height: 16px;
-  font-family: 'SF-Pro-Text-Regular';
-  text-align: center;
-  color: #2cb9b0;
-`
-export const AlternativeButton = styled(RectButton)`
   padding: 8px;
 `

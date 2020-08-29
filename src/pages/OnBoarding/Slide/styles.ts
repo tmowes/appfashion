@@ -11,7 +11,7 @@ export const SLIDE_TRANSLY = (SLIDE_HEIGHT - 100) / 2
 export const SLIDE_TRANSLX = width / 2
 export const SLIDE_TRANSLR = width / 2 - 50
 export const SLIDE_TRANSLL = -width / 2 + 50
-export const BORDER_RADIUS = 75
+export const BORDER_RADIUS = 48
 
 export const IMAGE_WIDTH = width
 export const IMAGE_HEIGHT = (width - BORDER_RADIUS) * 2
@@ -40,8 +40,8 @@ export const Wrapper = styled.View<WrapperProps>`
 `
 
 export const Title = styled.Text`
-  font-size: 80px;
-  line-height: 80px;
+  font-size: 72px;
+  line-height: 72px;
   font-family: 'SF-Pro-Text-Bold';
   text-align: center;
   color: white;

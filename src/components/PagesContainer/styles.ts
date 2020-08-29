@@ -38,10 +38,11 @@ export const ContentWrapper = styled.View`
 export const ContentContainer = styled.View`
   flex: 1;
   background: white;
+  padding: 0 32px;
   border-radius: ${BORDER_RADIUS}px;
   border-top-left-radius: 0;
 `
 export const FooterContent = styled.View`
-  height: 96px;
+  height: 80px;
   background: #0c0d34;
 `

@@ -9,7 +9,7 @@ import {
   ImageBgHeaderRadius,
   FooterContent,
 } from './styles'
-import bgCircles from '../../assets/bgcircles.jpg'
+import bgCircles from '../../assets/OnBoarding/bgcircles.jpg'
 import { PageContainerProps } from './types'
 
 const PagesContainer: React.FC<PageContainerProps> = ({ children, footer }) => {

@@ -14,6 +14,20 @@ const variants = {
   transparent2: css`
     background: transparent;
     color: #2cb9b0;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    font-size: 15px;
+    line-height: 20px;
+  `,
+  transparent3: css`
+    background: transparent;
+    color: #0c0d34;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    font-size: 15px;
+    line-height: 20px;
   `,
   default: css`
     background: #0c0d3411;

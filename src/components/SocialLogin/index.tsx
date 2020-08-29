@@ -1,6 +1,7 @@
 import React from 'react'
-
 import { useNavigation } from '@react-navigation/native'
+
+import Link from '../Link'
 import {
   Container,
   SocialWrapper,
@@ -10,8 +11,6 @@ import {
   AppleIcon,
   AlternativeWrapper,
   AlternativeText,
-  AlternativeButton,
-  ButtonText,
 } from './styles'
 
 const SocialLogin: React.FC = () => {
@@ -32,9 +31,11 @@ const SocialLogin: React.FC = () => {
       </SocialWrapper>
       <AlternativeWrapper>
         <AlternativeText>Don't have an account?</AlternativeText>
-        <AlternativeButton onPress={() => navigate('Login')}>
-          <ButtonText>Sign Up here</ButtonText>
-        </AlternativeButton>
+        <Link
+          variant="primary"
+          label="Sign Up here"
+          onPress={() => navigate('Login')}
+        />
       </AlternativeWrapper>
     </Container>
   )
