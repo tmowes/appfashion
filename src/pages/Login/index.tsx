@@ -33,7 +33,7 @@ const Login: React.FC = () => {
         </Description>
         <Formik
           validationSchema={LoginSchema}
-          initialValues={{ email: '', password: '' }}
+          initialValues={{ email: '', password: '', remember: false }}
           onSubmit={values => console.log(values)}
         >
           {({
@@ -43,6 +43,7 @@ const Login: React.FC = () => {
             values,
             errors,
             touched,
+            setFieldValue,
           }) => (
             <>
               <Input
@@ -65,7 +66,11 @@ const Login: React.FC = () => {
                 touched={touched.password}
               />
               <CheckboxContainer>
-                <Checkbox label="Remember me" />
+                <Checkbox
+                  label="Remember me"
+                  checked={values.remember}
+                  onChange={() => setFieldValue('remember', !values.remember)}
+                />
                 <Link
                   variant="primary"
                   label="Forgot password"
