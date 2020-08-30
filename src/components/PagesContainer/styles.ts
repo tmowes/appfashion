@@ -2,13 +2,14 @@ import styled from 'styled-components/native'
 import { Dimensions } from 'react-native'
 import { BORDER_RADIUS } from '../../pages/OnBoarding/Slide/styles'
 
-const { width } = Dimensions.get('window')
+const { width, height } = Dimensions.get('window')
 
 const aspectRatio = 1280 / 1856
-const height = width * aspectRatio * 1.25
-const HEADER_HEIGHT = (height * 0.61) / 1.5
+const imgHeight = width * aspectRatio * 1.25
+const HEADER_HEIGHT = (imgHeight * 0.61) / 2.5
 
 export const Container = styled.View`
+  height: ${height}px;
   flex: 1;
   background: white;
 `
@@ -19,11 +20,11 @@ export const HeaderWrapper = styled.View`
 `
 export const ImageBgHeader = styled.Image`
   width: ${width}px;
-  height: ${height}px;
+  height: ${imgHeight}px;
 `
 export const ImageBgHeaderRadius = styled.Image`
   width: ${width}px;
-  height: ${height}px;
+  height: ${imgHeight}px;
   position: absolute;
   top: -${HEADER_HEIGHT}px;
   left: 0;

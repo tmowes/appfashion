@@ -14,12 +14,9 @@ const App: React.FC = () => (
       backgroundColor="transparent"
       translucent
     />
-    {/* <StatusBar barStyle="light-content" backgroundColor="#312e38" /> */}
-    {/* <AppProvider> */}
     <View style={{ flex: 1, backgroundColor: 'transparent' }}>
       <Routes />
     </View>
-    {/* </AppProvider> */}
   </NavigationContainer>
 )
 

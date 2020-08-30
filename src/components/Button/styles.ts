@@ -43,6 +43,7 @@ export const Container = styled(RectButton)<ButtonContainerProps>`
     align-items: center;
     justify-content: center;
     ${variant && variants[variant]};
+    margin-bottom: 8px;
   `}
 `
 export const Label = styled.Text<ButtonContainerProps>`

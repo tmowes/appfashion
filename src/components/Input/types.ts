@@ -10,3 +10,7 @@ export interface InputProps extends TextInputProperties {
 export interface ContainerProps {
   borderColor: string
 }
+
+export interface InputRef {
+  focus(): void
+}

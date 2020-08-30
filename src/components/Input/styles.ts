@@ -14,7 +14,7 @@ export const Container = styled.View<ContainerProps>`
   `}
 `
 export const ValidContainer = styled.View`
-  margin: 0 16px 0 auto;
+  margin: 0 0 0 auto;
   align-items: center;
   justify-content: center;
   width: 20px;
