@@ -4,6 +4,7 @@ export interface HeaderProps {
     onPress: () => void
   }
   title: string
+  color: string
   right: {
     icon: string
     onPress: () => void

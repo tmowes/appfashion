@@ -1,22 +1,27 @@
 import React from 'react'
 import { Text } from 'react-native'
-import bgCircles from '../../assets/OnBoarding/bgcircles.jpg'
 
-import { Container, ImageBgHeader } from './styles'
+import { useNavigation, DrawerActions } from '@react-navigation/native'
+import { Container } from './styles'
+import Header from '../../components/Header'
 
 const OutfitIdeas: React.FC = () => {
+  const { dispatch } = useNavigation()
   return (
-    <Container
-      style={{
-        // marginTop: 28,
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <ImageBgHeader source={bgCircles} />
-      <Text style={{ fontSize: 48, color: '#000' }}>OutfitIdeas</Text>
-      <Text style={{ fontSize: 32, color: '#000' }}>COMMING SOON...</Text>
+    <Container>
+      <Header
+        title="Outfit Ideas"
+        color="#0c0d34"
+        left={{
+          icon: 'menu',
+          onPress: () => dispatch(DrawerActions.openDrawer()),
+        }}
+        right={{ icon: 'shopping-bag', onPress: () => true }}
+      />
+
+      <Text style={{ fontSize: 32, textAlign: 'center', color: '#000' }}>
+        COMMING SOON...
+      </Text>
     </Container>
   )
 }

@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react'
 
+import { DrawerActions, useNavigation } from '@react-navigation/native'
 import DrawerItem from './DrawerItem'
 import bgCircles from '../../assets/OnBoarding/bgcircles.jpg'
 import { menuItems } from './data'
@@ -23,14 +23,20 @@ import {
 } from './styles'
 import Header from '../Header'
 
-const DrawerMenu = () => {
+const DrawerMenu: React.FC = () => {
+  const { dispatch } = useNavigation()
   return (
     <Container>
       <DrawerHeader>
         <HeaderWrapper>
           <Header
             title="Menu"
-            left={{ icon: 'x', onPress: () => true }}
+            color="white"
+            left={{
+              icon: 'x',
+              // onPress: () => true,
+              onPress: () => dispatch(DrawerActions.closeDrawer()),
+            }}
             right={{ icon: 'shopping-bag', onPress: () => true }}
           />
         </HeaderWrapper>

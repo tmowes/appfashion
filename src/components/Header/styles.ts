@@ -7,10 +7,9 @@ export const Container = styled.View`
   padding: 24px 16px 0;
 `
 export const DrawerTitle = styled.Text`
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
   font-family: 'SF-Pro-Text-Semibold';
-  color: white;
   text-align: center;
   text-transform: uppercase;
 `

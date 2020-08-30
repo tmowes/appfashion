@@ -14,7 +14,7 @@ const DrawerRoutes: React.FC = () => (
       backgroundColor="transparent"
       translucent
     />
-    <Navigator drawerContent={DrawerMenu} screenOptions={{}}>
+    <Navigator drawerContent={() => <DrawerMenu />}>
       <Screen name="OutfitIdeas" component={OutfitIdeas} />
     </Navigator>
   </>

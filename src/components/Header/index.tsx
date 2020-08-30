@@ -4,22 +4,22 @@ import { HeaderProps } from './types'
 import RoundedIconButton from '../RoundedIconButton'
 import { Container, DrawerTitle } from './styles'
 
-const Header: React.FC<HeaderProps> = ({ left, title, right }) => {
+const Header: React.FC<HeaderProps> = ({ left, title, right, color }) => {
   return (
     <Container>
       <RoundedIconButton
         name={left.icon}
-        size={18}
-        color="white"
+        size={32}
+        color={color}
         backgroundColor="transparent"
         onPress={left.onPress}
       />
-      <DrawerTitle>{title}</DrawerTitle>
+      <DrawerTitle style={{ color }}>{title}</DrawerTitle>
       <RoundedIconButton
         name={right.icon}
-        size={18}
+        size={32}
         backgroundColor="transparent"
-        color="white"
+        color={color}
         onPress={right.onPress}
       />
     </Container>
