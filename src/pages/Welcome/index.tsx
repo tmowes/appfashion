@@ -44,11 +44,14 @@ const Welcome: React.FC = () => {
             label="Have an account? Login"
             onPress={() => navigate('Login')}
           />
-          <Button label="Join us, its free" onPress={() => {}} />
+          <Button
+            label="Join us, its free"
+            onPress={() => navigate('SignUp')}
+          />
           <Button
             variant="transparent"
             label="Forgot password"
-            onPress={() => {}}
+            onPress={() => navigate('ForgotPassword')}
           />
         </FooterContent>
       </FooterWrapper>

@@ -8,6 +8,7 @@ import Login from '../pages/Login'
 import SignUp from '../pages/SignUp'
 import ForgotPassword from '../pages/ForgotPassword'
 import PasswordChanged from '../pages/PasswordChanged'
+import Dashboard from '../pages/Dashboard'
 
 const App = createStackNavigator()
 
@@ -24,12 +25,13 @@ const AppRoutes: React.FC = () => (
         cardStyle: { backgroundColor: 'transparent' },
       }}
     >
-      <App.Screen name="PasswordChanged" component={PasswordChanged} />
-      <App.Screen name="SignUp" component={SignUp} />
-      <App.Screen name="ForgotPassword" component={ForgotPassword} />
-      <App.Screen name="Login" component={Login} />
       <App.Screen name="OnBoarding" component={OnBoarding} />
       <App.Screen name="Welcome" component={Welcome} />
+      <App.Screen name="Login" component={Login} />
+      <App.Screen name="SignUp" component={SignUp} />
+      <App.Screen name="ForgotPassword" component={ForgotPassword} />
+      <App.Screen name="PasswordChanged" component={PasswordChanged} />
+      <App.Screen name="Dashboard" component={Dashboard} />
     </App.Navigator>
   </>
 )

@@ -40,7 +40,7 @@ const Login: React.FC = () => {
   } = useFormik({
     validationSchema: LoginSchema,
     initialValues: { email: '', password: '', remember: true },
-    onSubmit: submitValues => console.log(submitValues),
+    onSubmit: () => navigate('Dashboard'),
   })
 
   return (
