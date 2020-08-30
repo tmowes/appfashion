@@ -15,7 +15,7 @@ import { PageContainerProps } from './types'
 
 const PagesContainer: React.FC<PageContainerProps> = ({ children, footer }) => {
   return (
-    <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
+    <KeyboardAwareScrollView>
       <Container>
         <HeaderWrapper>
           <ImageBgHeader source={bgCircles} />

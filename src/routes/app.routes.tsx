@@ -25,13 +25,13 @@ const AppRoutes: React.FC = () => (
         cardStyle: { backgroundColor: 'transparent' },
       }}
     >
+      <Screen name="DrawerRoutes" component={DrawerRoutes} />
       <Screen name="OnBoarding" component={OnBoarding} />
       <Screen name="Welcome" component={Welcome} />
       <Screen name="Login" component={Login} />
       <Screen name="SignUp" component={SignUp} />
       <Screen name="ForgotPassword" component={ForgotPassword} />
       <Screen name="PasswordChanged" component={PasswordChanged} />
-      <Screen name="DrawerRoutes" component={DrawerRoutes} />
     </Navigator>
   </>
 )

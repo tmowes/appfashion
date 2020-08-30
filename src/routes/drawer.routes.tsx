@@ -3,6 +3,7 @@ import { StatusBar } from 'react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 
 import OutfitIdeas from '../pages/OutfitIdeas'
+import DrawerMenu from '../components/DrawerMenu'
 
 const { Navigator, Screen } = createDrawerNavigator()
 
@@ -13,7 +14,7 @@ const DrawerRoutes: React.FC = () => (
       backgroundColor="transparent"
       translucent
     />
-    <Navigator screenOptions={{}}>
+    <Navigator drawerContent={DrawerMenu} screenOptions={{}}>
       <Screen name="OutfitIdeas" component={OutfitIdeas} />
     </Navigator>
   </>

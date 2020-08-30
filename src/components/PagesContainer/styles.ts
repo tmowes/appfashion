@@ -6,11 +6,10 @@ const { width, height } = Dimensions.get('window')
 
 const aspectRatio = 1280 / 1856
 const imgHeight = width * aspectRatio * 1.25
-const HEADER_HEIGHT = (imgHeight * 0.61) / 2.5
+const HEADER_HEIGHT = (imgHeight * 0.61) / 1.4
 
 export const Container = styled.View`
   height: ${height}px;
-  flex: 1;
   background: white;
 `
 export const HeaderWrapper = styled.View`
@@ -39,9 +38,10 @@ export const ContentWrapper = styled.View`
 export const ContentContainer = styled.View`
   flex: 1;
   background: white;
-  padding: 0 32px;
+  padding: 64px 32px;
   border-radius: ${BORDER_RADIUS}px;
   border-top-left-radius: 0;
+  justify-content: space-evenly;
 `
 export const FooterContent = styled.View`
   height: 80px;

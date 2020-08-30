@@ -25,7 +25,6 @@ const Input: React.RefForwardingComponent<InputRef, InputProps> = (
         ref={inputElementRef}
         underlineColorAndroid="transparent"
         placeholderTextColor="#15162480"
-        // autoFillColorAndroid="transparent"
         {...props}
       />
       {touched && (

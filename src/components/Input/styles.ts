@@ -7,7 +7,7 @@ export const Container = styled.View<ContainerProps>`
     padding: 0 16px;
     flex-direction: row;
     align-items: center;
-    height: 40px;
+    height: 48px;
     border-radius: 10px;
     border: 1px solid #8a8d90;
     border: 1px solid ${borderColor};
