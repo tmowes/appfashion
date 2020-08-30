@@ -4,7 +4,7 @@ import bgCircles from '../../assets/OnBoarding/bgcircles.jpg'
 
 import { Container, ImageBgHeader } from './styles'
 
-const Dashboard: React.FC = () => {
+const OutfitIdeas: React.FC = () => {
   return (
     <Container
       style={{
@@ -15,10 +15,10 @@ const Dashboard: React.FC = () => {
       }}
     >
       <ImageBgHeader source={bgCircles} />
-      <Text style={{ fontSize: 48, color: '#000' }}>Dashboard</Text>
+      <Text style={{ fontSize: 48, color: '#000' }}>OutfitIdeas</Text>
       <Text style={{ fontSize: 32, color: '#000' }}>COMMING SOON...</Text>
     </Container>
   )
 }
 
-export default Dashboard
+export default OutfitIdeas

@@ -8,9 +8,9 @@ import Login from '../pages/Login'
 import SignUp from '../pages/SignUp'
 import ForgotPassword from '../pages/ForgotPassword'
 import PasswordChanged from '../pages/PasswordChanged'
-import Dashboard from '../pages/Dashboard'
+import DrawerRoutes from './drawer.routes'
 
-const App = createStackNavigator()
+const { Navigator, Screen } = createStackNavigator()
 
 const AppRoutes: React.FC = () => (
   <>
@@ -19,20 +19,20 @@ const AppRoutes: React.FC = () => (
       backgroundColor="transparent"
       translucent
     />
-    <App.Navigator
+    <Navigator
       screenOptions={{
         headerShown: false,
         cardStyle: { backgroundColor: 'transparent' },
       }}
     >
-      <App.Screen name="OnBoarding" component={OnBoarding} />
-      <App.Screen name="Welcome" component={Welcome} />
-      <App.Screen name="Login" component={Login} />
-      <App.Screen name="SignUp" component={SignUp} />
-      <App.Screen name="ForgotPassword" component={ForgotPassword} />
-      <App.Screen name="PasswordChanged" component={PasswordChanged} />
-      <App.Screen name="Dashboard" component={Dashboard} />
-    </App.Navigator>
+      <Screen name="OnBoarding" component={OnBoarding} />
+      <Screen name="Welcome" component={Welcome} />
+      <Screen name="Login" component={Login} />
+      <Screen name="SignUp" component={SignUp} />
+      <Screen name="ForgotPassword" component={ForgotPassword} />
+      <Screen name="PasswordChanged" component={PasswordChanged} />
+      <Screen name="DrawerRoutes" component={DrawerRoutes} />
+    </Navigator>
   </>
 )
 

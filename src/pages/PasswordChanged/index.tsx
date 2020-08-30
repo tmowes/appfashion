@@ -30,9 +30,7 @@ const PasswordChanged: React.FC = () => {
             </IconCircle>
           </IconContainer>
           <Title>Your password was successfully changed</Title>
-          <Description>
-            Enter the email associated with your account
-          </Description>
+          <Description>Close this window and login again</Description>
           <ButtonContainer>
             <Button
               variant="primary"
