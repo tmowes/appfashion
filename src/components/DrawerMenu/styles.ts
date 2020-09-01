@@ -36,9 +36,13 @@ export const DrawerTitle = styled.Text`
 export const DrawerMenuWrapper = styled.View`
   flex: 0.8;
 `
-export const DrawerMenuContainer = styled.View`
+export const DrawerMenuTopContainer = styled.View`
   flex: 1;
   background: #0c0d34;
+`
+export const DrawerMenuBottomContainer = styled.View`
+  flex: 1;
+  background: #ef713d;
 `
 export const DrawerMenuContent = styled.View`
   position: absolute;
@@ -92,11 +96,12 @@ export const FooterWrapper = styled.View`
   right: 0;
   left: 0;
   bottom: 0;
-  background: #0c0d34;
   border-top-left-radius: ${BORDER_RADIUS}px;
   overflow: hidden;
 `
 export const ImageBgHeader = styled.Image`
   width: ${width}px;
   height: ${imgHeight + 20}px;
+  top: -24px;
+  left: -96px;
 `

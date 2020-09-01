@@ -1,12 +1,19 @@
-import React from 'react'
-import { Text } from 'react-native'
+import React, { useState } from 'react'
 
 import { useNavigation, DrawerActions } from '@react-navigation/native'
-import { Container } from './styles'
+import { useTransition } from 'react-native-redash'
+import { sub } from 'react-native-reanimated'
 import Header from '../../components/Header'
+import { cards, step } from './Card/data'
+import Background from './Background'
+import Card from './Card'
+import Categories from './Categories'
+import { Container, Content } from './styles'
 
 const OutfitIdeas: React.FC = () => {
   const { dispatch } = useNavigation()
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const animatedIndex = useTransition(currentIndex)
   return (
     <Container>
       <Header
@@ -18,12 +25,28 @@ const OutfitIdeas: React.FC = () => {
         }}
         right={{ icon: 'shopping-bag', onPress: () => true }}
       />
-
-      <Text style={{ fontSize: 32, textAlign: 'center', color: '#000' }}>
-        COMMING SOON...
-      </Text>
+      <Content>
+        <Background />
+        <Categories />
+        {cards.map(
+          ({ index, source }) =>
+            currentIndex < index * step + step && (
+              <Card
+                key={index}
+                position={sub(index * step, animatedIndex)}
+                onSwipe={() => setCurrentIndex(prev => prev + step)}
+                {...{ source, step }}
+              />
+            ),
+        )}
+      </Content>
     </Container>
   )
 }
 
 export default OutfitIdeas
+
+// interpolate(index, {
+//   inputRange: [animatedIndex, cards.length - 1],
+//   outputRange: [0, 1],
+// })

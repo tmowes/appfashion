@@ -10,7 +10,8 @@ import {
   DrawerHeader,
   HeaderWrapper,
   DrawerMenuWrapper,
-  DrawerMenuContainer,
+  DrawerMenuTopContainer,
+  DrawerMenuBottomContainer,
   DrawerMenuContent,
   AvatarCircle,
   Avatar,
@@ -42,7 +43,8 @@ const DrawerMenu: React.FC = () => {
         </HeaderWrapper>
       </DrawerHeader>
       <DrawerMenuWrapper>
-        <DrawerMenuContainer />
+        <DrawerMenuTopContainer />
+        <DrawerMenuBottomContainer />
         <DrawerMenuContent>
           <UserContent>
             <AvatarCircle>
