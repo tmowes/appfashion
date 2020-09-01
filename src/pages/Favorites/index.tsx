@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView } from 'react-native'
+import { ScrollView, Dimensions } from 'react-native'
 import { DrawerActions, useNavigation } from '@react-navigation/native'
 
 import Header from '../../components/Header'
@@ -16,8 +16,11 @@ import {
   RightColumn,
 } from './styles'
 
+const { width: wWidth } = Dimensions.get('window')
+
 const Favorites: React.FC = () => {
   const { dispatch } = useNavigation()
+  const outfitWith = (wWidth - 18 * 2 - 8) / 2
 
   return (
     <Container>
@@ -30,21 +33,22 @@ const Favorites: React.FC = () => {
         }}
         right={{ icon: 'shopping-bag', onPress: () => true }}
       />
+
       <Content>
-        <ScrollView>
+        <ScrollView contentContainerStyle={{ paddingHorizontal: 18 }}>
           <ScrollContent>
             <LeftColumn>
               {outfits
                 .filter((_, index) => index % 2 !== 0)
                 .map(({ id, color, aspectRatio }) => (
-                  <Outfit key={id} {...{ color, aspectRatio }} />
+                  <Outfit key={id} {...{ color, aspectRatio, outfitWith }} />
                 ))}
             </LeftColumn>
-            <RightColumn>
+            <RightColumn style={{ marginLeft: 8 }}>
               {outfits
                 .filter((_, index) => index % 2 === 0)
                 .map(({ id, color, aspectRatio }) => (
-                  <Outfit key={id} {...{ color, aspectRatio }} />
+                  <Outfit key={id} {...{ color, aspectRatio, outfitWith }} />
                 ))}
             </RightColumn>
           </ScrollContent>
