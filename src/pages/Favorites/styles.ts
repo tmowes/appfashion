@@ -15,3 +15,10 @@ export const ScrollContent = styled.View`
 export const LeftColumn = styled.View``
 
 export const RightColumn = styled.View``
+
+export const FooterOverlay = styled.View`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+`

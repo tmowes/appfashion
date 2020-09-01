@@ -2,14 +2,11 @@ import styled from 'styled-components/native'
 import { RectButton } from 'react-native-gesture-handler'
 import Icon from 'react-native-vector-icons/Feather'
 
-export const Container = styled.View`
-  /* flex: 1; */
-`
+export const Container = styled.View``
 export const Wrapper = styled.View`
   flex: 1;
   justify-content: space-evenly;
   margin: 64px 0;
-  /* background: orange; */
 `
 export const Title = styled.Text`
   font-size: 28px;
