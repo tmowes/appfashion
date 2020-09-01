@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { ScrollView, Dimensions } from 'react-native'
 import { DrawerActions, useNavigation } from '@react-navigation/native'
-
+import {
+  Transitioning,
+  Transition,
+  TransitioningView,
+} from 'react-native-reanimated'
 import Header from '../../components/Header'
 
 import Footer from './Footer'
@@ -21,9 +25,12 @@ const { width: wWidth } = Dimensions.get('window')
 
 const Favorites: React.FC = () => {
   const { dispatch } = useNavigation()
+  const left = useRef<TransitioningView>(null)
+  const right = useRef<TransitioningView>(null)
   const outfitWith = (wWidth - 12 * 2 - 8) / 2
   const [footerHeight, setFooterHeight] = useState(0)
   const [outfits, setOutfits] = useState(defaultOutfits)
+  const transition = <Transition.Change interpolation="easeInOut" />
 
   return (
     <Container>
@@ -45,24 +52,22 @@ const Favorites: React.FC = () => {
         >
           <ScrollContent>
             <LeftColumn>
-              {outfits
-                .filter((_, index) => index % 2 !== 0)
-                .map(({ id, color, aspectRatio, selected }) => (
-                  <Outfit
-                    key={id}
-                    {...{ color, aspectRatio, outfitWith, selected }}
-                  />
-                ))}
+              <Transitioning.View ref={left} {...{ transition }}>
+                {outfits
+                  .filter((_, index) => index % 2 !== 0)
+                  .map(outfit => (
+                    <Outfit key={outfit.id} {...{ outfit, outfitWith }} />
+                  ))}
+              </Transitioning.View>
             </LeftColumn>
             <RightColumn style={{ marginLeft: 8 }}>
-              {outfits
-                .filter((_, index) => index % 2 === 0)
-                .map(({ id, color, aspectRatio, selected }) => (
-                  <Outfit
-                    key={id}
-                    {...{ color, aspectRatio, outfitWith, selected }}
-                  />
-                ))}
+              <Transitioning.View ref={right} {...{ transition }}>
+                {outfits
+                  .filter((_, index) => index % 2 === 0)
+                  .map(outfit => (
+                    <Outfit key={outfit.id} {...{ outfit, outfitWith }} />
+                  ))}
+              </Transitioning.View>
             </RightColumn>
           </ScrollContent>
         </ScrollView>
@@ -76,6 +81,8 @@ const Favorites: React.FC = () => {
           <Footer
             label="Add to favorites"
             onPress={() => {
+              left.current?.animateNextTransition()
+              right.current?.animateNextTransition()
               setOutfits(outfits.filter(outfit => !outfit.selected))
               console.log('outfits', outfits)
             }}

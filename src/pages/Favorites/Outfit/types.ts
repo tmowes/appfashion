@@ -1,6 +1,8 @@
 export interface FavoriteOutfitProps {
-  color: string
-  aspectRatio: number
+  outfit: {
+    color: string
+    aspectRatio: number
+    selected: boolean
+  }
   outfitWith: number
-  selected: boolean
 }

@@ -5,23 +5,18 @@ import { FavoriteOutfitProps } from './types'
 import { Container } from './styles'
 import RoundedIconButton from '../../../components/RoundedIconButton'
 
-const Outfit: React.FC<FavoriteOutfitProps> = ({
-  color,
-  aspectRatio,
-  outfitWith,
-  selected,
-}) => {
+const Outfit: React.FC<FavoriteOutfitProps> = ({ outfit, outfitWith }) => {
   const [selectedOutfit, setSelectedOutfit] = useState(false)
   return (
     <Container
       onPress={() => {
         setSelectedOutfit(prev => !prev)
-        selected = !selected
+        outfit.selected = !outfit.selected
       }}
       style={{
-        backgroundColor: color,
+        backgroundColor: outfit.color,
         width: outfitWith,
-        height: outfitWith * aspectRatio,
+        height: outfitWith * outfit.aspectRatio,
         marginVertical: 4,
       }}
     >
