@@ -20,17 +20,22 @@ import {
   RightColumn,
   FooterOverlay,
 } from './styles'
+import FooterTopCurve from './FooterTopCurve'
 
 const { width: wWidth } = Dimensions.get('window')
 
 const Favorites: React.FC = () => {
   const { dispatch } = useNavigation()
-  const left = useRef<TransitioningView>(null)
-  const right = useRef<TransitioningView>(null)
+  const list = useRef<TransitioningView>(null)
   const outfitWith = (wWidth - 12 * 2 - 8) / 2
   const [footerHeight, setFooterHeight] = useState(0)
   const [outfits, setOutfits] = useState(defaultOutfits)
-  const transition = <Transition.Change interpolation="easeInOut" />
+
+  const transition = (
+    <Transition.Together>
+      <Transition.Change interpolation="easeInOut" durationMs={500} />
+    </Transition.Together>
+  )
 
   return (
     <Container>
@@ -50,27 +55,26 @@ const Favorites: React.FC = () => {
             paddingBottom: footerHeight,
           }}
         >
-          <ScrollContent>
-            <LeftColumn>
-              <Transitioning.View ref={left} {...{ transition }}>
+          <Transitioning.View ref={list} transition={transition}>
+            <ScrollContent>
+              <LeftColumn>
                 {outfits
-                  .filter((_, index) => index % 2 !== 0)
+                  .filter(({ id }) => id % 2 !== 0)
                   .map(outfit => (
                     <Outfit key={outfit.id} {...{ outfit, outfitWith }} />
                   ))}
-              </Transitioning.View>
-            </LeftColumn>
-            <RightColumn style={{ marginLeft: 8 }}>
-              <Transitioning.View ref={right} {...{ transition }}>
+              </LeftColumn>
+              <RightColumn style={{ marginLeft: 8 }}>
                 {outfits
-                  .filter((_, index) => index % 2 === 0)
+                  .filter(({ id }) => id % 2 === 0)
                   .map(outfit => (
                     <Outfit key={outfit.id} {...{ outfit, outfitWith }} />
                   ))}
-              </Transitioning.View>
-            </RightColumn>
-          </ScrollContent>
+              </RightColumn>
+            </ScrollContent>
+          </Transitioning.View>
         </ScrollView>
+        <FooterTopCurve footerHeight={footerHeight} />
         <FooterOverlay
           onLayout={({
             nativeEvent: {
@@ -81,8 +85,7 @@ const Favorites: React.FC = () => {
           <Footer
             label="Add to favorites"
             onPress={() => {
-              left.current?.animateNextTransition()
-              right.current?.animateNextTransition()
+              list.current?.animateNextTransition()
               setOutfits(outfits.filter(outfit => !outfit.selected))
               console.log('outfits', outfits)
             }}
