@@ -45,8 +45,3 @@ const OutfitIdeas: React.FC = () => {
 }
 
 export default OutfitIdeas
-
-// interpolate(index, {
-//   inputRange: [animatedIndex, cards.length - 1],
-//   outputRange: [0, 1],
-// })

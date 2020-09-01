@@ -16,8 +16,8 @@ const DrawerRoutes: React.FC = () => (
       translucent
     />
     <Navigator drawerContent={() => <DrawerMenu />}>
-      <Screen name="OutfitIdeas" component={OutfitIdeas} />
       <Screen name="Favorites" component={Favorites} />
+      <Screen name="OutfitIdeas" component={OutfitIdeas} />
     </Navigator>
   </>
 )

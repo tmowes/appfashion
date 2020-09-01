@@ -26,7 +26,7 @@ export const categories = [
   },
   {
     id: 'others',
-    color: '#D4BAB1',
+    color: '#D5C3BB',
     label: 'Others Stuffs',
   },
 ]
