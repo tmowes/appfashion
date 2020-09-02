@@ -13,10 +13,10 @@ const Graph: React.FC<GraphProps> = ({ data }) => {
   const height = width * aspectRatio
   const step = width / data.length
   const values = data.map(v => v.value)
-  const dates = data.map(d => d.date)
-  const minX = Math.min(...dates)
-  const maxX = Math.max(...dates)
-  const minY = Math.min(...values)
+  // const dates = data.map(d => d.date)
+  // const minX = Math.min(...dates)
+  // const maxX = Math.max(...dates)
+  // const minY = Math.min(...values)
   const maxY = Math.max(...values)
   return (
     <Container
