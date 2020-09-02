@@ -5,6 +5,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer'
 import OutfitIdeas from '../pages/OutfitIdeas'
 import Favorites from '../pages/Favorites'
 import DrawerMenu from '../components/DrawerMenu'
+import Transactions from '../pages/Transactions'
 
 const { Navigator, Screen } = createDrawerNavigator()
 
@@ -16,6 +17,7 @@ const DrawerRoutes: React.FC = () => (
       translucent
     />
     <Navigator drawerContent={() => <DrawerMenu />}>
+      <Screen name="Transactions" component={Transactions} />
       <Screen name="Favorites" component={Favorites} />
       <Screen name="OutfitIdeas" component={OutfitIdeas} />
     </Navigator>

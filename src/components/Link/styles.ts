@@ -6,6 +6,12 @@ const variants = {
   primary: css`
     color: #2cb9b0;
   `,
+  primaryFilled: css`
+    color: #2cb9b0;
+    background: #2cb9b01c;
+    padding: 4px 8px;
+    border-radius: 16px;
+  `,
   white: css`
     color: white;
   `,

@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
-import { RectButton } from 'react-native-gesture-handler'
+import { BorderlessButton } from 'react-native-gesture-handler'
 
-export const IconContainer = styled(RectButton)`
+export const IconContainer = styled(BorderlessButton)`
   align-items: center;
   justify-content: center;
 `

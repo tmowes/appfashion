@@ -15,5 +15,28 @@
 #F3F0EF
 #D5C3BB
 
+  font-size: 16px;
+  font-size: 24px;
+  line-height: 24px;
+  line-height: 30px;
 
 
+
+
+  font-family: 'SF-Pro-Text-Regular';
+  font-family: 'SF-Pro-Text-Semibold';
+
+
+
+primary: #2cb9b0
+secondary: #0c0d34
+text: #0c0d34B3
+danger: #ff0058
+grey: #f4f0ef
+greyLight: #fafafa
+primaryLight: #e7f9f7
+orange: #fe5e33
+yellow: #ffc641
+pink: #ff87a2
+violet: #442cb9
+blueLight: #bfeaf5
