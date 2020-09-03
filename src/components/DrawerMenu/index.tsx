@@ -35,7 +35,6 @@ const DrawerMenu: React.FC = () => {
             color="white"
             left={{
               icon: 'x',
-              // onPress: () => true,
               onPress: () => dispatch(DrawerActions.closeDrawer()),
             }}
             right={{ icon: 'shopping-bag', onPress: () => true }}

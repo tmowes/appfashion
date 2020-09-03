@@ -3,6 +3,7 @@ export interface GraphProps {
 }
 
 export interface SpendData {
+  id: number
   date: number
   value: number
   color: string

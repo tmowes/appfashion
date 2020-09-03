@@ -33,7 +33,8 @@ const Favorites: React.FC = () => {
 
   const transition = (
     <Transition.Together>
-      <Transition.Change interpolation="easeInOut" durationMs={500} />
+      <Transition.Out type="fade" />
+      <Transition.In type="fade" />
     </Transition.Together>
   )
 
@@ -59,14 +60,14 @@ const Favorites: React.FC = () => {
             <ScrollContent>
               <LeftColumn>
                 {outfits
-                  .filter(({ id }) => id % 2 !== 0)
+                  .filter((_, index) => index % 2 !== 0)
                   .map(outfit => (
                     <Outfit key={outfit.id} {...{ outfit, outfitWith }} />
                   ))}
               </LeftColumn>
               <RightColumn style={{ marginLeft: 8 }}>
                 {outfits
-                  .filter(({ id }) => id % 2 === 0)
+                  .filter((_, index) => index % 2 === 0)
                   .map(outfit => (
                     <Outfit key={outfit.id} {...{ outfit, outfitWith }} />
                   ))}

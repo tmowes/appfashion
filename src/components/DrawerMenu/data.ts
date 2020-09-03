@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { CommonActions } from '@react-navigation/native'
+
 export const menuItems = [
   {
     icon: 'zap',
@@ -32,7 +35,15 @@ export const menuItems = [
   {
     icon: 'power',
     label: 'Logout',
-    screen: 'Logout',
+    screen: 'Login',
     color: '#0c0d34',
   },
 ]
+
+// onPress: ({ dispatch }: any) =>
+// dispatch(
+//   CommonActions.reset({
+//     index: 0,
+//     routes: [{ name: 'Login' }],
+//   }),
+// ),
