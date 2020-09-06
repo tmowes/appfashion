@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { CommonActions } from '@react-navigation/native'
-
 export const menuItems = [
   {
     icon: 'zap',
