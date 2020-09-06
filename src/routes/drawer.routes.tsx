@@ -7,6 +7,7 @@ import Favorites from '../pages/Favorites'
 import DrawerMenu from '../components/DrawerMenu'
 import Transactions from '../pages/Transactions'
 import Profile from '../pages/Profile'
+import Notifications from '../pages/Notifications'
 
 const { Navigator, Screen } = createDrawerNavigator()
 
@@ -18,6 +19,7 @@ const DrawerRoutes: React.FC = () => (
       translucent
     />
     <Navigator drawerContent={() => <DrawerMenu />}>
+      <Screen name="Notifications" component={Notifications} />
       <Screen name="Profile" component={Profile} />
       <Screen name="Transactions" component={Transactions} />
       <Screen name="Favorites" component={Favorites} />

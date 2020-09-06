@@ -1,12 +1,12 @@
 import React from 'react'
 import { ScrollView } from 'react-native'
 
-import { Container, TitleConfig, ConfigList } from './styles'
-import { configsData } from './data'
 import OutfitColorsSelector from './OutfitColorsSelector'
 import OutfitSizesSelector from './OutfitSizesSelector'
 import OutfitTypesSelector from './OutfitTypesSelector'
 import OutfitBrandsSelector from './OutfitBrandsSelector'
+import { configsData } from './data'
+import { Container, TitleConfig, ConfigList } from './styles'
 
 const TabConfiguration: React.FC = () => {
   return (
