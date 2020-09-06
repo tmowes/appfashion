@@ -7,6 +7,7 @@ export const Container = styled(RectButton)`
   padding: 8px;
   margin: 4px 32px;
   border-radius: 16px;
+  background: #f4f0ef1c;
 `
 export const IconView = styled.View`
   height: 32px;
