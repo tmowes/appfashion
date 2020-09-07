@@ -10,7 +10,7 @@ export const accountData = {
     },
     {
       title: 'Address',
-      userData: '394 St Botuverá, Timbó, SC, Brazil',
+      userData: '6969 St Botuverá, Timbó, SC, Brazil',
       secureTextEntry: false,
     },
   ],
