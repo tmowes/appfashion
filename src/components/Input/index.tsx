@@ -6,7 +6,7 @@ import Feather from 'react-native-vector-icons/Feather'
 import { Container, ValidContainer } from './styles'
 import { InputProps, InputRef } from './types'
 
-const Input: React.RefForwardingComponent<InputRef, InputProps> = (
+const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
   { icon, error, touched, ...props },
   ref,
 ) => {
